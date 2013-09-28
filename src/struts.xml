@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="9314572800"></constant>
+	<package name="Fwpro" extends="json-default">
+		<action name="login" class="com.action.LoginAction" method="login">
+			<result name="error">/error.jsp</result>
+			<result name="admin">/index.jsp</result>
+			<result name="user">/welcome.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="registe" class="com.action.LoginAction" method="registe">
+			<result name="success">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="admin" class="com.action.AdminAction" method="modify">		
+			<result name="success" type="json"></result>
+		</action>
+		<action name="apply" class="com.action.UserAction" method="apply">
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="replymsg" class="com.action.AdminAction" method="replymsg">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="title" class="com.action.TitleAction" method="releasetitle">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="picture" class="com.action.TitleAction" method="uploadpic">
+			<result name="success">/release.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="request" class="com.http.GetXml" method="getxml"></action>
+	</package>
+	
+</struts>

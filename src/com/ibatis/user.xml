@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="user">
+
+	<typeAlias alias="User" type="com.bean.User" />
+	<typeAlias alias="Message" type="com.bean.Message"/>
+	<select id="findUserByName" resultClass="User" parameterClass="java.lang.String">
+		select * from user where username=#username# and state=1
+    </select>
+    <insert id="insertUser" parameterClass="User">
+    	insert into user values(#username#,#password#,#email#,3,1,#info#)
+    </insert>
+    <select id="findAllUser" resultClass="User">
+    	select * from user
+    </select>
+    <select id="findGenUser" resultClass="User">
+    	select * from user where type=3
+    </select>
+    <update id="alterUserData" parameterClass="User">
+    	update user set email=#email#,type=$type$,state=$state$,info=#info# where username=#username#
+    </update>
+
+    <insert id="insertMessage" parameterClass="Message">
+    	insert into message (username,reason,state) values (#username#,#reason#,0)
+    </insert>
+    <select id="findAllMessage" resultClass="Message">
+    	select * from message where state=0
+    </select>
+    <update id="replyMessage" parameterClass="Message">
+    	update message set state=$state$ where id=$id$
+    </update>
+
+	
+
+</sqlMap>

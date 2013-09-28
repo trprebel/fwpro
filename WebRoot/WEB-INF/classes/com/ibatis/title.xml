@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="title">
+	<typeAlias alias="Title" type="com.bean.Title" />
+	<typeAlias alias="Image" type="com.bean.Image" />
+	<insert id="createTitle" parameterClass="Title">
+    	insert into title (content,speed,direction) values (#content#,$speed$,$direction$)
+    </insert>
+    <insert id="insertImage" parameterClass="Image">
+    	insert into image (path) values (#path#)
+    </insert>
+    <select id="findAllImages" resultClass="Image">
+    	select * from image
+    </select>
+    <select id="findTitleById" resultClass="Title" parameterClass="java.lang.Integer" >
+    	select * from title where id=$id$
+    </select>
+</sqlMap>
