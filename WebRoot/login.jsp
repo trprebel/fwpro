@@ -22,14 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <script type="text/javascript">
   function f_check_number()
-{           
+  {           
 	var obj=username=document.getElementById("username").value;
     var patrn=/^[A-Za-z0-9]+$/;
 
-　　if (!patrn.exec(obj)) alert("false");
+	if (!patrn.exec(obj)) alert("false");
 	else alert("true");
    
-} 
+  }
   function check()
   {
   	

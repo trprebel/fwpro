@@ -33,8 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			//alert("script");
 			var settings = {
 				flash_url : "swfupload.swf",
-				upload_url: "picture.action",
-				file_post_name : "picture",
+				upload_url: "uploadfile.action",
+				file_post_name : "file",
 				//post_params: {"PHPSESSID" : "123"},
 				file_size_limit : "500 MB",
 				file_types : "*.*",

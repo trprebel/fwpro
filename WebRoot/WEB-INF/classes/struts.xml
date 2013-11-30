@@ -32,6 +32,8 @@
 			<result name="success">/release.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
+		<action name="uploadfile" class="com.action.TitleAction" method="uploadfile">
+		</action>
 		<action name="request" class="com.http.GetXml" method="getxml"></action>
 	</package>
 	
