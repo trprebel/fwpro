@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 
 import com.bean.Message;
@@ -21,7 +22,7 @@ public class LoginAction extends ActionSupport{
 	 * 2013-09-16
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	static Logger logger = Logger.getLogger(LoginAction.class);
 	private String username;
 	private String password;
 	private String email;
@@ -85,6 +86,7 @@ public class LoginAction extends ActionSupport{
 				messages="验证码不正确！";
 				return "login";
 			}
+			logger.error(username);
 			//ActionContext ctx = ActionContext.getContext();
 			//HttpServletRequest request = (HttpServletRequest) ctx.get(ServletActionContext.HTTP_REQUEST);
 			//System.out.println("username:"+getUsername());
